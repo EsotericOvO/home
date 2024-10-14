@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel='stylesheet' href='./styles.css' />
+    <link rel='icon' type='image/x-icon' href='./img/favicon.png' />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+</head>
+<body>
+    <span style='position: fixed;'>
+        <div class='dnav'>
+            <a href='#'><img src='./img/ic.png' /></a>
+        </div>
+        <div class='dnav'>
+            &nbsp;<a href='#about'>about</a>
+        </div>
+        <div class='dnav'>
+            &nbsp;<a href='#contact'>contact</a>
+        </div>
+    </span>
+
+    <section id='about'>
+        <h1>About</h1>
+      <p>schizophrenic extremist from <span class="censored">%#$%$^</span><br><br>
+        things i like:<br> black metal, neovim, schizomaxxing, tor, you, a certain controversial political figure, and many other things
+        <br><br>things i hate:<br>the current thing, discord, COMMIES, epstein, diddy, also you, goyim products, and many other things
+        <br>
+      </p>
+
+    </section>
+
+    <section id='contact'>
+        <h1>Contact</h1>
+        <ul>
+            <li>email: lOvOl@firemail.cc</li>
+            <li>PGP: <a href='./pgp/AD380E4E049F20B14E88B07C039694C493894FE5.asc'>[pubkey.asc]</a></li>
+            <li>discord: nvllnull</li> 
+        </section>
+    <script>
+        const censoredText = [
+            '█YT█^',
+            'E#████d',
+            '████H#',
+            '!███nYa',
+            '██████',
+            '███F██',
+            '███X@#',
+            '█$███^',
+            '███Z#@!',
+            '█A██ty',
+            'C#███D',
+            '███E^%',
+            'F!!███',
+            'H#███I',
+            'J█.██K$',
+            'L%g███',
+            'N@███O',
+            'P███!Q',
+            'R$███S',
+            'T%███U',
+            'V&g███',
+            'X*███Y',
+            'Z.(███)'
+        ];
+        const censoredElement = document.querySelector('.censored');
+
+        setInterval(() => {
+            censoredElement.textContent = censoredText[Math.floor(Math.random()*(censoredText.length-1))];
+        }, 50);
+
+    </script>
+    <audio autoplay loop>
+        <source src="/music/blackmagickarmy.mp3" type="audio/mpeg">
+    </audio>
+</body>
