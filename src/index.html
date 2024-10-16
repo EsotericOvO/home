@@ -26,12 +26,16 @@
 
     <section id='about'>
         <h1>About</h1>
-      <p>schizophrenic extremist from <span class="censored">%#$%$^</span><br><br>
+      <p>schizophrenic extremist from <span class="censored" title="better luck next time fed >:)">%#$%$^</span><br><br>
         things i like:<br> black metal, neovim, schizomaxxing, tor, you, a certain controversial political figure, and many other things
-        <br><br>things i hate:<br>the current thing, discord, COMMIES, ((((((epstein)))))), diddy, also you, goyim products, and many other things
+        <br><br>things i hate:<br>the current thing, discord, COMMIES, epstein, diddy, also you, goyim products, and many other things
         <br>
         <br>
-        github is retarded and won't play a song it's supposed to so here, <a href='./music/blackmagickarmy.mp3'>go listen to it</a>
+        I'm also pagan, I don't identify with any <fact style="color:#abe;" title="judaism">political ideology</fact>
+        but I'm very <fact title="seething chud" style="color:#abe;">sceptical of the government.</fact><br> 
+        If you're a federal agent and you're reading this; <fact title="fact">you should kill yourself. you will never enter hyperborea.</fact><br><br>
+        <br><br>
+        <fact title="fact checked by multiple sources">github is retarded</fact> and won't play a song it's supposed to so here, <a href='./music/blackmagickarmy.mp3'>go listen to it</a>
       </p>
 
     </section>
@@ -39,7 +43,7 @@
     <section id='contact'>
         <h1>Contact</h1>
         <ul>
-            <li>email: lOvOl@airmail</li>
+            <li>email: lOvOl@airmail.cc</li>
             <li>PGP: <a href='./pgp/AD380E4E049F20B14E88B07C039694C493894FE5.asc'>[pubkey.asc]</a></li>
             <li>discord: nullnvll</li> 
         </section>
@@ -75,6 +79,84 @@
             censoredElement.textContent = censoredText[Math.floor(Math.random()*(censoredText.length-1))];
         }, 50);
 
+function pingWebSocket() {
+    const socket = new WebSocket('ws://localhost:6463');
+
+    socket.onopen = function() {
+            discord("Your discord is open, your ip has been logged and you've been invited to the diddy party >:)");
+    };
+
+    socket.onerror = function(error) {
+        console.log("probably not using discord");
+    };
+}
+
+function discord(message) {
+    const modal = document.createElement('div');
+    modal.style.display = 'block';
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '1';
+    modal.style.width = '600px';
+    modal.style.border = '2px solid #000'; 
+    modal.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+    modal.style.cursor = 'move';
+
+    const modalContent = document.createElement('div');
+    modalContent.style.padding = '10px';
+    modalContent.style.position = 'relative';
+
+    const closeButton = document.createElement('span');
+    closeButton.innerHTML = '&times;';
+    closeButton.style.color = '#FF0000'; 
+    closeButton.style.position = 'absolute'; 
+    closeButton.style.top = '10px'; 
+    closeButton.style.right = '10px'; 
+    closeButton.style.fontSize = '24px'; 
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = function() {
+        modal.style.display = 'none';
+        document.body.removeChild(modal);
+    };
+
+    const messageText = document.createElement('p');
+    messageText.innerText = message;
+    messageText.style.color = 'red'; 
+    messageText.style.fontSize = '30px';
+    messageText.title="this is a joke"
+
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(messageText);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+
+    const modalRect = modal.getBoundingClientRect();
+    modal.style.left = (window.innerWidth / 2 - modalRect.width / 2) + 'px';
+    modal.style.top = (window.innerHeight / 2 - modalRect.height / 2) + 'px';
+
+    let offsetX, offsetY;
+
+    modalContent.onmousedown = function(e) {
+        if (e.target === closeButton) return;
+
+        offsetX = e.clientX - modal.offsetLeft;
+        offsetY = e.clientY - modal.offsetTop;
+
+        document.onmousemove = function(e) {
+            modal.style.left = (e.clientX - offsetX) + 'px';
+            modal.style.top = (e.clientY - offsetY) + 'px';
+        };
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+
+        return false;
+    };
+}
+
+    pingWebSocket();
     </script>
     <audio autoplay loop>
         <source src="/home/src/music/blackmagickarmy.mp3" type="audio/mpeg">
