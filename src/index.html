@@ -10,7 +10,7 @@
 </head>
 <body>
     <span style='position: fixed;'>
-        <div class='dnav'>
+        <div class='dnav' id="icon">
             <a href='#'><img src='./img/ic.png' /></a>
         </div>
         <div class='dnav'>
@@ -159,7 +159,17 @@
             };
         }
 
-            pingWebSocket();
+        let clickCount = 0;
+        const icon = document.getElementById('icon');
+
+        icon.addEventListener('click', () => {
+            clickCount++; 
+            if (clickCount === 5) {
+                window.location.href = './vid/thosewhoknow.mp4'; // :)
+            }
+        });
+        
+        pingWebSocket();
     </script>
     <audio autoplay loop>
         <source src="/home/src/music/blackmagickarmy.mp3" type="audio/mpeg">
