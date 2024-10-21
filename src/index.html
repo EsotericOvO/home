@@ -37,8 +37,12 @@
         I'm also pagan, I don't identify with any <fact style="color:#abe;" title="judaism">political ideology</fact>
         but I'm very <fact title="seething chud" style="color:#abe;">sceptical of the government.</fact><br> 
         If you're a federal agent and you're reading this; <fact title="fact">you should kill yourself. you will never enter hyperborea.</fact><br><br>
+        fun fact: there are a few "easter eggs" in this site, try typing funny numbers and clicking stuff in this site
         <br><br>
-        <fact title="fact checked by multiple sources">github is retarded</fact> and won't play a song it's supposed to so here, <a href='./music/blackmagickarmy.mp3'>go listen to it</a>
+        <fact title="fact checked by multiple sources">github is retarded</fact> and won't play a song it's supposed to so here, listen to it.<br><br>
+        <audio controls loop>
+            <source src="https://esotericovo.github.io/home/src/music/blackmagickarmy.mp3" type="audio/mpeg">
+        </audio>
       </p>
 
     </section>
@@ -165,13 +169,57 @@
         icon.addEventListener('click', () => {
             clickCount++; 
             if (clickCount === 5) {
-                window.location.href = './vid/thosewhoknow.mp4'; // :)
+                window.location.href = './vid/thosewhoknow.mp4';
             }
         });
         
+        let inputSequence = [];
+        const targetSequence = "420";
+
+        document.addEventListener('keydown', (event) => {
+            if (targetSequence.includes(event.key)) {
+                inputSequence.push(event.key);
+                if (inputSequence.length > targetSequence.length) {
+                    inputSequence.shift();
+                }
+
+                if (inputSequence.join('') === targetSequence) {
+                    startPsychedelicEffect();
+                }
+            } else {
+                inputSequence = [];
+            }
+        });
+
+        function startPsychedelicEffect() {
+            const audio = new Audio('./music/hallucinations.mp3');
+            audio.play();
+            alert("dude weed lmao / playing black magick ss - endless hallucinations")
+            setInterval(() => {
+                changeAllElementsColor();
+            }, 1000);
+        }
+
+        function changeAllElementsColor() {
+            const elements = document.querySelectorAll('*');
+
+            elements.forEach(element => {
+                const randomTextColor = getRandomColor();
+                const randomBorderColor = getRandomColor();
+                element.style.transition = 'color 5s';
+                element.style.color = randomTextColor; 
+                element.style.borderColor = randomBorderColor;
+            });
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
         pingWebSocket();
     </script>
-    <audio autoplay loop>
-        <source src="/home/src/music/blackmagickarmy.mp3" type="audio/mpeg">
-    </audio>
 </body>
