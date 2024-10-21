@@ -25,7 +25,7 @@ body {
 }
 
 .shaky {
-    animation: shake 40s infinite;
+    animation: shake 60s infinite;
 }
 
 div, section {
