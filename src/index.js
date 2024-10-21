@@ -138,6 +138,9 @@ document.addEventListener("keydown", (event) => {
 });
 
 function startPsychedelicEffect() {
+    const icon = document.getElementById("icn");
+    icon.src="./img/hallucinations.png"
+    icon.style.opacity=0.5
     const audio = new Audio("./music/hallucinations.mp3");
     audio.play();
     alert("dude weed lmao / playing black magick ss - endless hallucinations");
@@ -148,7 +151,6 @@ function startPsychedelicEffect() {
 
 function changeAllElementsColor() {
     const elements = document.querySelectorAll("*");
-
     elements.forEach((element) => {
         const randomTextColor = getRandomColor();
         const randomBorderColor = getRandomColor();
