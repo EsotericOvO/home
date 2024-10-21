@@ -206,9 +206,11 @@
             elements.forEach(element => {
                 const randomTextColor = getRandomColor();
                 const randomBorderColor = getRandomColor();
-                element.style.transition = 'color 5s';
-                element.style.color = randomTextColor; 
+                element.style.transition = 'color 5s, border-color 5s, text-shadow 5s';
+                element.style.color = randomTextColor;
+                element.style.textShadow = "3px 3px 1px "+randomBorderColor
                 element.style.borderColor = randomBorderColor;
+                element.classList.add('shaky');
             });
         }
 

@@ -16,6 +16,18 @@ body {
     word-break: break-word;
 }
 
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    25% { transform: translate(-5px, -2px) rotate(0.5deg); }
+    50% { transform: translate(-3px, 0px) rotate(-0.5deg); }
+    75% { transform: translate(5px, 2px) rotate(0.5deg); }
+    100% { transform: translate(1px, -1px) rotate(0deg); }
+}
+
+.shaky {
+    animation: shake 40s infinite;
+}
+
 div, section {
     background: var(--cb);
     border: 1px solid var(--c1);
