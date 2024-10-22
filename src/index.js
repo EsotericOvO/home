@@ -173,3 +173,7 @@ function getRandomColor() {
 }
 
 pingWebSocket();
+
+if (window.innerHeight > window.innerWidth) {
+    alert("For a usable experience, please switch to landscape mode or use a computer.");
+}
