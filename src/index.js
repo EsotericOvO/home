@@ -49,7 +49,7 @@ function discord(message) {
     modal.style.display = "block";
     modal.style.position = "fixed";
     modal.style.zIndex = "1";
-    modal.style.width = "600px";
+    modal.style.width = "50vw";
     modal.style.border = "2px solid #000";
     modal.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
     modal.style.cursor = "move";
@@ -173,7 +173,3 @@ function getRandomColor() {
 }
 
 pingWebSocket();
-
-if (window.innerHeight > window.innerWidth) {
-    alert("For a usable experience, please switch to landscape mode or use a computer.");
-}

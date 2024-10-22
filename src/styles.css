@@ -14,14 +14,15 @@ body {
     color: var(--cw);
     font-family: 'DotGothic16', monospace;
     word-break: break-word;
+    overflow-x:hidden;
 }
 
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     25% { transform: translate(-5px, -2px) rotate(0.5deg); }
     50% { transform: translate(-3px, 0px) rotate(-0.5deg); }
-    75% { transform: translate(5px, 2px) rotate(0.5deg); }
-    100% { transform: translate(1px, -1px) rotate(0deg); }
+    75% { transform: translate(5px, 2px) rotate(1deg); }
+    100% { transform: translate(6px, -1px) rotate(0deg); }
 }
 
 .shaky {
@@ -42,7 +43,7 @@ div, section {
 
 section {
     display: none;
-    margin-left: 180px;
+    margin-left: 12vw;
     padding: 8px 16px;
 }
 
@@ -57,9 +58,12 @@ h1 {
     margin: 4px 0 12px 0;
 }
 
+p{
+  font-size:auto;
+}
+
 h2 {
-    font-size: 1em;
-    font-weight: normal;
+    font-weight: 1em;
     margin: 36px 0 0 12px;
     text-decoration: underline;
 }
@@ -81,7 +85,7 @@ img {
     clear: left;
     float: left;
     margin-bottom: 8px;
-    width: 160px;
+    width: 10vw;
     padding: 4px;
 }
 
@@ -113,7 +117,7 @@ img {
 
 @media (max-width: 600px) {
     .mnav { display: block; }
-    .dnav { display: none; }
-    section { margin-left: 0; margin-bottom: 36px; }
+    .dnav { display: inline-block; min-width:100px; }
+    section { margin-left: 120px; margin-bottom: 36px; }
 }
 
